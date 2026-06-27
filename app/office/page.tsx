@@ -115,7 +115,7 @@ export default function OfficeDashboard() {
             table: "ticket_messages",
             filter: `ticket_id=eq.${selectedTicketId}`,
           },
-          (payload) => {
+          (payload: { new: TicketMessage }) => {
             setTicketMessages((prev) => [...prev, payload.new as TicketMessage]);
           }
         )
